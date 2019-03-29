@@ -2,8 +2,10 @@ package com.example.demo.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -36,6 +38,8 @@ public class Question {
 	 
 	 @Column(name="c_question_desc") 
 	 private String questionDesc;
+	 
+	
 	
 	 public Question(String questionDesc)
 	 {

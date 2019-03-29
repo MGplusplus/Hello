@@ -29,4 +29,10 @@ public class QuestionService {
 		// TODO Auto-generated method stub
 		return questionRepository.OnlyQuestions();
 	}
+
+
+	public List<Object> QuestionWithCompleteData() {
+		
+		return questionRepository.QuestionWithCompleteData();
+	}
 }
