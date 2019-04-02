@@ -20,4 +20,16 @@ public class QuestionService {
 	{
 		return questionRepository.findAll();
 	}
+
+
+	public List<Question> LastTwentyRecentlyAskedQuestions() {
+		
+		return questionRepository.findTop20ByOrderByQuestionIdDesc();
+	}
+
+
+	public List<Question> LastTwentyQuestionOfTag(int tagId) {
+		
+		return questionRepository.findTop20ByTagIdOrderByQuestionIdDesc(tagId);
+	}
 }

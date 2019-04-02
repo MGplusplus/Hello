@@ -1,9 +1,12 @@
 package com.example.demo.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -15,7 +18,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name="t_person")
-public class Person{
+public class Person implements Serializable{
 	
 	@Id
 	@GeneratedValue
@@ -59,7 +62,8 @@ public class Person{
 	private String jobTech;
 	
 	@Column(name="c_profile_pic_id")
-	private String profilePicId;
+	@Lob
+	private byte[] profilePicId;
 	
 	@Column(name="c_mobile_no")
 	private Integer mobileNo;
