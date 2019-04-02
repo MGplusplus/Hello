@@ -5,8 +5,12 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,15 +21,17 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name = "t_questions")
-public class Question {
+public class Question{
 
 	 @Id
 	 @GeneratedValue
 	 @Column(name="c_qid")
 	 private int questionId;
 	 
-	 @Column(name="c_person_id") 
-	 private int personId;
+	 @ManyToOne(fetch = FetchType.LAZY, optional = false)
+	 @JoinColumn(name = "c_person_id", referencedColumnName= "c_person_id" ,nullable = false) 
+	 @Fetch(FetchMode.JOIN)
+	 private Person person;
 	 
 	 @Column(name="c_status_id") 
 	 private int statusId;
@@ -38,7 +44,6 @@ public class Question {
 	 
 	 @Column(name="c_question_desc") 
 	 private String questionDesc;
-	 
 	
 	
 	 public Question(String questionDesc)

@@ -2,26 +2,20 @@ package com.example.demo.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
 @Entity
 @Table(name="t_person")
-public class Person {
+public class Person{
 	
 	@Id
 	@GeneratedValue
@@ -59,7 +53,7 @@ public class Person {
 	private String jobExperience;
 	
 	@Column(name="c_job_year_exp")
-	private int jobYearExp;
+	private Integer jobYearExp;
 	
 	@Column(name="c_job_tech")
 	private String jobTech;
@@ -68,17 +62,15 @@ public class Person {
 	private String profilePicId;
 	
 	@Column(name="c_mobile_no")
-	private int mobileNo;
+	private Integer mobileNo;
 	
 	@Column(name="c_mobile_show_bit")
-	private int mobileShowBit;
+	private Integer mobileShowBit;
 	
 	@Column(name="c_cdac_experience")
 	private String cdacExperience;
 	
 	@Column(name="c_batch_id")
-	private int batchId;
-	
-	
+	private Integer batchId;
 	
 }
