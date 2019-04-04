@@ -44,10 +44,5 @@ public class Question{
 	 
 	 @Column(name="c_question_desc") 
 	 private String questionDesc;
-	
-	
-	 public Question(String questionDesc)
-	 {
-		 this.questionDesc = questionDesc;
-	 }
+
 }

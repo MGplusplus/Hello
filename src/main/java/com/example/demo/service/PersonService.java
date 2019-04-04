@@ -1,30 +1,21 @@
 package com.example.demo.service;
 
 import java.util.List;
-import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.example.demo.model.Person;
-import com.example.demo.repository.PersonRepository;
+import com.example.demo.repository.IPersonRepository;
 
 @Component
 public class PersonService {
 
 	@Autowired
-	private PersonRepository personRepository;
+	private IPersonRepository personRepository;
 	
 	public List<Person> getRandomMembers() {
-		
-		int[] index = new Random().ints(0, 5, 10).toArray();
-		//int[] like =  new Random().
-		
-		System.out.println(index);
-		
-		int indexs = 1;
-		
-		return personRepository.findFirst5OrderByPersonId(indexs);
+		return personRepository.findFirst5ByOrderByPersonIdDesc();
 	}
 	
 	

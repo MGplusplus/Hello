@@ -6,8 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.demo.model.Person;
 
-public interface PersonRepository extends JpaRepository<Person, Integer>{
+public interface IPersonRepository extends JpaRepository<Person, Integer>{
 
-	List<Person> findFirst5OrderByPersonId(int index);
+	List<Person> findFirst5ByOrderByPersonIdDesc();
 
 }

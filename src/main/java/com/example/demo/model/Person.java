@@ -61,10 +61,6 @@ public class Person implements Serializable{
 	@Column(name="c_job_tech")
 	private String jobTech;
 	
-	@Column(name="c_profile_pic_id")
-	@Lob
-	private byte[] profilePicId;
-	
 	@Column(name="c_mobile_no")
 	private Integer mobileNo;
 	
